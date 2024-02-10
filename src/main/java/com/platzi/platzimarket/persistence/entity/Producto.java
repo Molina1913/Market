@@ -22,6 +22,9 @@ public class Producto {
     @Column(name = "cantidad_stock")
     private Integer cantidadStock;
     private Boolean estado;
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)//insertable y updatable significa que no vamos a borrar ni actualizar ni insertar una nueva categoria a traves de la relación
+    private Categoria categoria;
 
     public Integer getIdProducto() {
         return idProducto;
